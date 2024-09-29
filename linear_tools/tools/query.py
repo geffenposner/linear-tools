@@ -54,7 +54,7 @@ pip install requests
 
 python /tmp/list_tickets.py
 """,
-    files=[
+    with_files=[
         FileSpec(destination="/tmp/list_tickets.py", content=inspect.getsource(list_tickets))
     ],
 )
