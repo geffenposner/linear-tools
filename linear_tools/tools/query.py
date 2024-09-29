@@ -47,5 +47,5 @@ create_issue = LinearApiTool(
 )
 
 # Register the tools
-tool_registry.register(list_tickets_todo)
-tool_registry.register(create_issue)
+tool_registry.register("linear",list_tickets_todo)
+tool_registry.register("linear",create_issue)
