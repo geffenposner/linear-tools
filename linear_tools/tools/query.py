@@ -52,10 +52,10 @@ list_tickets_todo_python = Tool(
     content="""
 pip install requests
 
-python /temp/list_tickets.py
+python /tmp/list_tickets.py
 """,
     files=[
-        FileSpec(destination="/temp/list_tickets.py", content=inspect.getsource(list_tickets))
+        FileSpec(destination="/tmp/list_tickets.py", content=inspect.getsource(list_tickets))
     ],
 )
 
