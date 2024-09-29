@@ -1,6 +1,10 @@
-from kubiya_sdk.tools import Arg
+
+from kubiya_sdk.tools import Arg, Tool, FileSpec
 from .base import LinearApiTool
 from kubiya_sdk.tools.registry import tool_registry
+from .common import COMMON_ENVIRONMENT_VARIABLES, COMMON_SECRET_VARIABLES
+from . import list_tickets
+import inspect
 
 list_tickets_todo = LinearApiTool(
     name="list_tickets_todo",
@@ -38,6 +42,24 @@ create_issue = LinearApiTool(
     ],
 )
 
+list_tickets_todo_python = Tool(
+    name="list_tickets_todo_python",
+    description="List tickets with status 'todo' using python",
+    type="docker",
+    image="python:3.12",
+    env=COMMON_ENVIRONMENT_VARIABLES,
+    secrets=COMMON_SECRET_VARIABLES,
+    content="""
+pip install requests
+
+python /temp/list_tickets.py
+""",
+    files=[
+        FileSpec(destination="/temp/list_tickets.py", content=inspect.getsource(list_tickets))
+    ],
+)
+
 # Register the tools
 tool_registry.register("linear",list_tickets_todo)
 tool_registry.register("linear",create_issue)
+tool_registry.register("linear",list_tickets_todo_python)
