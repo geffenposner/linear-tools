@@ -40,9 +40,9 @@ create_issue = LinearApiTool(
     }
     """,
     args=[
-        Arg(name="title", type="string", description="Title of the issue"),
-        Arg(name="description", type="string", description="Description of the issue"),
-        Arg(name="team_id", type="string", description="ID of the team to assign the issue to"),
+        Arg(name="title", type="str", description="Title of the issue"),
+        Arg(name="description", type="str", description="Description of the issue"),
+        Arg(name="team_id", type="str", description="ID of the team to assign the issue to"),
     ],
 )
 
