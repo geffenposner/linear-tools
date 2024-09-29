@@ -19,7 +19,7 @@ class LinearApiTool(Tool):
             description=description,
             icon_url=LINEAR_ICON_URL,
             type="docker",
-            image="rapidfort/curl:latest",
+            image="curlimages/curl",
             content=content,
             args=args,
             env=COMMON_ENVIRONMENT_VARIABLES,
