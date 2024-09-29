@@ -3,6 +3,7 @@ import requests
 
 
 def list_tickets_todo_python():
+    print(os.environ)
     print(f"Linear API Key: {os.getenv('linear-api-key-geffen')}")
     query = {
   "query": "query { issues(filter: { state: { id: { eq: \"53c71e8a-8ccb-4ee5-99e6-53a4056c6072\" } } }) { nodes { title } } }"
@@ -10,7 +11,7 @@ def list_tickets_todo_python():
 
     response = requests.post(
         "https://api.linear.app/graphql",
-        headers={"Authorization": f"{os.getenv('linear-api-key-geffen')}"},
+        headers={"Authorization": os.getenv('linear-api-key-geffen')},
         json=query,
     )
     return response.json()
