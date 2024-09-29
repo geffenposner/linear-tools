@@ -47,7 +47,7 @@ list_tickets_todo_python = Tool(
     description="List tickets with status 'todo' using python",
     type="docker",
     image="python:3.12",
-    env=COMMON_ENVIRONMENT_VARIABLES,
+    env=["COMMON_ENVIRONMENT_VARIABLES"],
     secrets=COMMON_SECRET_VARIABLES,
     content="""
 pip install requests
