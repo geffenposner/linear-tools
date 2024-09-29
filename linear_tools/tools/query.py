@@ -6,15 +6,15 @@ list_tickets_todo = LinearApiTool(
     name="list_tickets_todo",
     description="List tickets with status 'todo'",
     query="""
-    {
-      issues(filter: { state: { id: "53c71e8a-8ccb-4ee5-99e6-53a4056c6072" } }) {
+query Issues {
+    issues(
+        filter: { state: { id: { eq: "53c71e8a-8ccb-4ee5-99e6-53a4056c6072" } } }
+    ) {
         nodes {
-          id
-          title
-          description
+            title
         }
-      }
     }
+}
     """,
     args=[],
 )
