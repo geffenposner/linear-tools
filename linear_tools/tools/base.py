@@ -4,7 +4,7 @@ from .common import COMMON_ENVIRONMENT_VARIABLES, COMMON_SECRET_VARIABLES
 LINEAR_ICON_URL = "https://logowik.com/content/uploads/images/linear-app8372.logowik.com.webp"
 LINEAR_API_URL = "https://api.linear.app/graphql"
 
-class LinearApiTool(Tool):
+class LinearApiQuery(Tool):
     def __init__(self, name, description, query, args, long_running=False, mermaid_diagram=None):
         content = f"""
         curl -X POST \\
