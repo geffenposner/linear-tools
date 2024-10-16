@@ -25,4 +25,4 @@ if __name__ == "__main__":
     # Get coordinates for the given city ???
     stateID = args.stateID
 
-    list_tickets_dynamic_python(stateID)
+    print(list_tickets_dynamic_python(stateID))
