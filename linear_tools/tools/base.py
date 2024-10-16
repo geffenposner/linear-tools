@@ -8,7 +8,7 @@ LINEAR_ICON_URL = "https://logowik.com/content/uploads/images/linear-app8372.log
 LINEAR_API_URL = "https://api.linear.app/graphql"
 
 class LinearApiQuery(Tool):
-    def __init__(self, name, description, content, args, long_running=False, mermaid_diagram=None):
+    def __init__(self, name, description, content, args, with_files, long_running=False, mermaid_diagram=None):
 
         super().__init__(
             name=name,
@@ -20,6 +20,7 @@ class LinearApiQuery(Tool):
             args=args,
             env=COMMON_ENVIRONMENT_VARIABLES,
             secrets=COMMON_SECRET_VARIABLES,
+            with_files=with_files,
             long_running=long_running,
             mermaid_diagram=mermaid_diagram
         )
