@@ -5,7 +5,7 @@ import argparse
 
 def list_tickets_dynamic_python(stateID: str):
     query = {
-  "query": f'query {{ issues(filter: {{ state: {{ id: {{ eq: "{stateID}" }} }} }}) {{ nodes {{ title }} }} }}'
+  "query": "query { issues(filter: { state: { id: { eq: \"stateID\" } } }) { nodes { title } } }"
 }
 
     response = requests.post(
