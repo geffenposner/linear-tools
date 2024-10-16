@@ -32,7 +32,7 @@ list_tickets_by_state = Tool(
     description="lists Linear tickets with workflow state ID {stateID}",
     args=[Arg(name="stateID", description="workflow stateID of the tickets you want to see", required=True)],
     content="""
-pip install requests
+pip install requests argparse
 
 python /tmp/list_tickets_dynamic.py "{{ .stateID }}"
 """,
