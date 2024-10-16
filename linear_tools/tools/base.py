@@ -1,4 +1,5 @@
-from . import list_tickets_dynamic
+from . import list_tickets_dynamic, list_tickets
+import inspect
 from kubiya_sdk.tools.models import Tool, Arg, FileSpec
 from kubiya_sdk.tools.registry import tool_registry
 from .common import COMMON_ENVIRONMENT_VARIABLES, COMMON_SECRET_VARIABLES
