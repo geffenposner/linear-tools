@@ -1,7 +1,7 @@
 import os
 import requests
 import argparse
-from common import COMMON_ENVIRONMENT_VARIABLES, COMMON_SECRET_VARIABLES
+#from common import COMMON_ENVIRONMENT_VARIABLES, COMMON_SECRET_VARIABLES
 
 def list_tickets_dynamic_python(stateID: str):
     query = {
@@ -10,7 +10,7 @@ def list_tickets_dynamic_python(stateID: str):
 
     response = requests.post(
         "https://api.linear.app/graphql",
-        headers={"Authorization": COMMON_SECRET_VARIABLES.linear_api_key},
+        headers={"Authorization": os.getenv('linear_api_key')},
         json=query,
     )
     return response.json()
