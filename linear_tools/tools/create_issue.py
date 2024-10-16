@@ -10,7 +10,7 @@ from .common import COMMON_ENVIRONMENT_VARIABLES, COMMON_SECRET_VARIABLES
 create_issue = LinearApiQuery(
     name="create_issue",
     description="Create a new issue",
-    query="""
+    content="""
     mutation {
       issueCreate(input: {
         title: "{{.title}}",
