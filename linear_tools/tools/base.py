@@ -32,6 +32,8 @@ list_tickets_by_state = Tool(
     description="lists Linear tickets with workflow state ID {stateID}",
     args=[Arg(name="stateID", description="workflow stateID of the tickets you want to see", required=True)],
     content="""
+pip install requests
+
 python /tmp/list_tickets_dynamic.py "{{ .stateID }}"
 """,
     with_files=[
