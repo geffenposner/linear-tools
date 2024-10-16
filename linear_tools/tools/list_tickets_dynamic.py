@@ -2,6 +2,8 @@ import os
 import requests
 import argparse
 
+linear_api_key = os.getenv('linear-api-key-geffen')
+
 def list_tickets_dynamic_python(stateID: str):
     query = {
   "query": f'query {{ issues(filter: {{ state: {{ id: {{ eq: "{stateID}" }} }} }}) {{ nodes {{ title }} }} }}'
@@ -9,7 +11,7 @@ def list_tickets_dynamic_python(stateID: str):
 
     response = requests.post(
         "https://api.linear.app/graphql",
-        headers={"Authorization": os.getenv('linear-api-key-geffen')},
+        headers={"Authorization": f'"{linear_api_key}"'},
         json=query,
     )
     return response.json()
