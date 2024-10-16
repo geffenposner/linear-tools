@@ -5,21 +5,14 @@ LINEAR_ICON_URL = "https://logowik.com/content/uploads/images/linear-app8372.log
 LINEAR_API_URL = "https://api.linear.app/graphql"
 
 class LinearApiQuery(Tool):
-    def __init__(self, name, description, query, args, long_running=False, mermaid_diagram=None):
-        content = f"""
-        curl -X POST \\
-        -H "Content-Type: application/json" \\
-        -H "Authorization: ${{linear-api-key-geffen}}" \\
-        --data '{{"query": "{query}"}}' \\
-        {LINEAR_API_URL}
-        """
-
+    def __init__(self, name, description, content, args, long_running=False, mermaid_diagram=None):
+        
         super().__init__(
             name=name,
             description=description,
             icon_url=LINEAR_ICON_URL,
             type="docker",
-            image="curlimages/curl",
+            image="python:3.12.6-alpine3.20",
             content=content,
             args=args,
             env=COMMON_ENVIRONMENT_VARIABLES,
