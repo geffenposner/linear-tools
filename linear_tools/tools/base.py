@@ -19,7 +19,7 @@ class LinearApiQuery(Tool):
             content=content,
             args=args,
             env=COMMON_ENVIRONMENT_VARIABLES,
-            secrets=COMMON_SECRET_VARIABLES,
+            secrets="linear-api-key-geffen",
             with_files=with_files,
             long_running=long_running,
             mermaid_diagram=mermaid_diagram
