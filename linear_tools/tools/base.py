@@ -15,7 +15,7 @@ class LinearApiQuery(Tool):
             description=description,
             icon_url=LINEAR_ICON_URL,
             type="docker",
-            image="python:3.12.6-alpine3.20",
+            image="python:3.12",
             content=content,
             args=args,
             env=COMMON_ENVIRONMENT_VARIABLES,
