@@ -11,7 +11,7 @@ def list_tickets_dynamic_python(stateID: str):
 
     response = requests.post(
         "https://api.linear.app/graphql",
-        headers={"Authorization": linear_api_key},
+        headers={"Authorization": "{linear_api_key}"},
         json=query,
     )
     return response.json()
