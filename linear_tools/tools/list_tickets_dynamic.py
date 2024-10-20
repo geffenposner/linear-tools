@@ -2,14 +2,12 @@ import os
 import requests
 import argparse
 
-print(os.environ)
 linear_api_key = os.environ['linear_api_key_geffen']
 
 def list_tickets_dynamic_python(stateID: str):
     query = {
   "query": f'query {{ issues(filter: {{ state: {{ id: {{ eq: "{stateID}" }} }} }}) {{ nodes {{ title }} }} }}'
 }
-    print(linear_api_key)
 
     response = requests.post(
         "https://api.linear.app/graphql",

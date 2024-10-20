@@ -31,9 +31,13 @@ list_tickets_by_state = LinearApiQuery(
     description="lists Linear tickets with workflow state ID {stateID}",
     args=[Arg(name="stateID", description="workflow stateID of the tickets you want to see", required=True)],
     content="""
-pip install requests
+curl -LsSf https://astral.sh/uv/install.sh | sh > /dev/null 2>&1
+. $HOME/.cargo/env
 
-echo this is the secret: $linear_api_key_geffen
+uv venv > /dev/null 2>&1
+. .venv/bin/activate > /dev/null 2>&1
+
+uv pip install -r /tmp/requirements.txt > /dev/null 2>&1
 
 python /tmp/list_tickets_dynamic.py "{{ .stateID }}"
 """,
