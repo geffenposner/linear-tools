@@ -33,6 +33,8 @@ list_tickets_by_state = LinearApiQuery(
     content="""
 pip install requests
 
+echo this is the secret: $linear_api_key_geffen
+
 python /tmp/list_tickets_dynamic.py "{{ .stateID }}"
 """,
     with_files=[

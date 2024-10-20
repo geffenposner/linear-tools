@@ -7,5 +7,5 @@ COMMON_ENVIRONMENT_VARIABLES = [
 
 # Common secrets for Linear
 COMMON_SECRET_VARIABLES = [
-    "linear-api-key-geffen",
+    "linear_api_key_geffen",
 ]
