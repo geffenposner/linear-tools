@@ -2,6 +2,7 @@ import os
 import requests
 import argparse
 
+print(os.environ)
 linear_api_key = os.environ['linear-api-key-geffen']
 
 def list_tickets_dynamic_python(stateID: str):
