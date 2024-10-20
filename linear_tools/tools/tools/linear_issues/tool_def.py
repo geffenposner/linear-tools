@@ -24,7 +24,7 @@ curl -LsSf https://astral.sh/uv/install.sh | sh > /dev/null 2>&1
 uv venv > /dev/null 2>&1
 . .venv/bin/activate > /dev/null 2>&1
 
-uv pip install -r /tmp/requirements.txt > /dev/null 2>&1
+uv pip install requests > /dev/null 2>&1
 
 python /tmp/list_tickets_dynamic.py "{{ .stateID }}"
 """,
