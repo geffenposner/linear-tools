@@ -35,10 +35,6 @@ python /tmp/list_tickets_dynamic.py "{{ .stateID }}"
             destination="/tmp/list_tickets_dynamic.py",
             content=inspect.getsource(list_tickets_dynamic),
         ),
-        FileSpec(
-            destination="/tmp/requirements.txt",
-            content="",  # Add any requirements here
-        ),
     ],
 )
 
