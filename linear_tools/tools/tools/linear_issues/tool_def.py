@@ -8,7 +8,7 @@ from kubiya_sdk.tools.registry import tool_registry
 
 from .common import COMMON_ENVIRONMENT_VARIABLES, COMMON_SECRET_VARIABLES
 
-LINEAR_ICON_URL = "https://logowik.com/content/uploads/images/linear-app8372.logowik.com.webp"
+LINEAR_ICON_URL = "https://linear.app/favicon.ico"
 
 list_tickets_by_workflow_state_id = Tool(
     name="list_tickets_by_workflow_state_id",
